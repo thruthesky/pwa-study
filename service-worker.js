@@ -65,10 +65,10 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', event => {
     console.log('fetch begins...');
     const url = new URL(event.request.url);
-    // if ( url.origin == location.origin && url.pathname.indexOf('/dog.png') != -1 ) {
-    //     console.log('hijacking the request and response with cat.png');
-    //     event.respondWith( caches.match('cat.png') );
-    // }
+    if ( url.origin == location.origin && url.pathname.indexOf('/dog.png') != -1 ) {
+        console.log('hijacking the request of dog.png and response with cat.png');
+        event.respondWith( caches.match('cat.png') );
+    }
 });
 
 

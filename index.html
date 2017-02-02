@@ -10,13 +10,14 @@
         PWA 테스트입니다.<br>
         <img src="dog.png">
     
+    
         <script>
             if ( 'serviceWorker' in navigator ) {
-                navigator.serviceWorker.register('service-worker.js')
-                                .then(reg => console.log('SW registered!', reg))
-                                .catch(err => console.log('Boo!', err));
+                navigator.serviceWorker.register( 'service-worker.js' )
+                    .then( reg => console.log('Service worker registered!', reg) )
+                    .catch(err => console.error('Error!', err));
             }
-            else console.error('Your browser is no good.');
+            else console.error('Your browser does not support serviceWorker.');
         </script>
     </body>
 </html>
